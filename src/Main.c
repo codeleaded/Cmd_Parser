@@ -8,7 +8,11 @@ int main(int argc, const char *argv[]){
     //Parser_Classify
     Parser_Parse_Space(&p,"float a = 10.0 + 0.1");
     //Parser_PushToken
-    
+
+    String buffer = String_Make("Hello World");
+    Parser_PushToken(&p,(TokenTyp[]){ PARSER_STRING },&buffer);
+    String_Free(&buffer);
+
     Parser_Print(&p);
     Parser_Free(&p);
 
